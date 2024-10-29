@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<button>Click me</button>
+  <script>
+    // "use strict"
+    /*  
+    Hoisting :
+      -> In JS hoisting is default behaviour of moving all the declaration at the top of scope before execution. 
+
+      -> Hoisting is phenomenon in which we can able to access certain varibles anfd functions before it's actual declaration.
+
+      -> before execution, code is scanned for variable declaration and for each variable , a new property is created in the variable environment object.
+    */
+
+    console.log(msg);
+
+    greet()
+    
+    var msg = "Welcome to JS"
+    
+    console.log(msg);
+    function greet(){
+      console.log("Hello world");
+    }
+
+
+    /* 
+    -----------------------------------------------------------------------------------------------------------
+                                |  Hoisted                 Intial Value                        Scope
+    -----------------------------------------------------------------------------------------------------------
+    1.) var variable                YES                     Undefined                        Function Scope
+    2.) FN Declaration              YES                    Actual FN                         Block Scope
+    3.) let and const               NO                      <unintialazation>TDZ             Block Scope
+    4.) Fn exp and Arr Fn           depends on var or let/const
+
+    */
+
+    greet()  //undefined()
+
+    var greet = function(){
+      console.log("Hello");
+    }
+
+    // Recursive Function - A function calls itself
+
+    const counter = 0
+    function count(i){
+      console.log("Hello World");
+      i++
+      if(i < 5){
+        count(i)
+      }
+    }
+    count(0)
+
+    // // Mutual recursive Fn
+    function a(){
+      b()
+    }
+    function b(){
+      a()
+    }
+    /////////////////////////////////////////////////////////////////////
+
+  //'this' keyword - Special varibale takes the value of the 'Owner' of the function in which this keyword is used.
+
+  const peter = {
+    name: "Peter",
+    age: 25,
+    msg : function(){
+      console.log(`${this.name} is ${this.age} years-old`);
+    }
+  }
+  peter.msg()
+
+  const apple = {
+    brand:"Apple",
+    model:"Iphone 16",
+
+    msg: function(){
+        console.log("simple Fn", this);
+        
+      const x = () => {
+         console.log("Arrow Fn",this);
+         
+      }
+      x()
+      console.log(`${this.brand} was released ${this.model} on Aug 2024`);
+    }
+  }
+
+  apple.msg()
+
+  function sum(){
+    console.log(this);
+  }
+  sum()
+
+  const arrFn = () => {
+    console.log(this);
+  }
+  arrFn()
+
+  const btn = document.querySelector("button")
+
+  btn.addEventListener("click", function(){
+    console.log(this);
+  })
+  
+  /* 
+  -------------------------------------------------------------------------------------
+  Method -> this - <owner of the Fn>(normal Fn)    |     Globally(window) (Arrow FN)
+    
+  Simple fN -> this - Globally(window) (Sloppy mode) | undefined(Strict mode)
+
+  Arrow Fn -> this - lexical this | Globally(window)(both)
+  
+  Event listner -> this - HTML Element |  Globally(window) (Arrow FN)
+
+  new, call, apply, bind -> this - Manually set "this" keyword
+  -------------------------------------------------------------------------------------
+  */
+
+  let x = 10
+
+  let y = x
+
+  x = 20
+
+  console.log(x, y);
+
+
+  const john = {
+    name: "john",
+    age : 25,
+    friends:["a", "b", "c"]
+  }
+
+  // const friend = john
+
+  // console.log(john, friend);
+
+  // friend.age = 30
+
+  // console.log(john, friend);
+
+  const friend = Object.assign({}, john)
+
+  friend.age = 30
+  friend.friends[0] = "x"
+  console.log(john, friend); 
+  </script>
+</body>
+</html>

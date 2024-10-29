@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Form Validation</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Registration</h1>
+    <form action="#">
+      <div class="form first">
+        <div class="details personal">
+          <div>
+            <div class="input-icon">
+              <label>Full Name</label>
+              <input id="name-value" class="input-field" type="text" placeholder="Enter your name"/>
+              <span id="name-error" class="error"></span>
+
+            </div>
+
+            <div class="input-icon">
+              <label>Email</label>
+              <input id="email-value" type="email" placeholder="Enter your email" />
+              <span id="email-error" class="error"></span>
+              <!-- <i class='fas fa-check-circle icon'></i> -->
+            </div>
+
+            <div class="input-icon">
+              <label>Password</label>
+              <input id="pwd-value" type="password" placeholder="Enter your password" />
+              <span id="pwd-error" class="error"></span>
+            </div>
+
+            <div class="input-icon">
+              <label>Mobile Number</label>
+              <input id="phone-value" type="number" placeholder="Enter mobile number" />
+              <span id="phone-error" class="error"></span>
+              <!-- <i class = 'fas fa-check-circle icon'></i> -->
+            </div>
+
+            <div>
+              <label>Gender</label>
+              <select id="gender-value" class="gender">
+                <option disabled selected value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <span id="gender-error" class="error"></span>
+            </div>
+
+            <div class="input-icon">
+              <label>Occupation</label>
+              <input id="occ-value" type="text" placeholder="Enter your occupation" />
+              <!-- <i class = 'fas fa-check-circle icon'></i> -->
+              <span id="occ-error" class="error"></span>
+            </div>
+
+            <div>
+              <button id="btn" type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <script src="./script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

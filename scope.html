@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+/* 
+    Scoping - Organising and Accessing, Where do variables live? where can we access a certain variable and where not.
+
+    lexical scoping - scoping is controlled by placement of function and blocks in the code.
+
+    Scope - Space or environment in which a certain variables is declared.  
+
+*/
+
+   const name = "peter"
+   function first(){
+     let a = 1
+     const b = second()  // b = 2
+     a = a + b
+     return a
+   }
+   function second(){
+    const c = 2
+    return c
+   }
+   const x = first()
+   console.log(x);
+
+
+/* 
+  Global scope -  
+      i) Outside of any function or else outside block.
+      ii) Variables declared globally can be access Everywhere.
+
+  Function scope - Which presents inside the function, Not Outside
+
+  Block scope - Which presents inside the Block (i,e: If else(), loops) 
+*/
+
+   const i = 10
+   let j = true
+
+   //function scope
+  function sum2(){
+   let name1 = "ABC"
+   const num = 2
+   var res = num + 1
+  }
+  // console.log(name1);
+
+  //block Scope - 
+  if(true){
+    let name2 = "XYZ"
+    const city = "Bangalore"
+    var state = "KA"
+  }
+  console.log(city);
+
+
+  //Scope Chainings - It is a chain of scope. For example, suppose we define the nested function inside the function. In that case, it can have its local scope, and variables declared inside the nested function can’t be accessible in the outer function
+
+  const name2 = "Peter"
+  const age = 24
+  // let job = "Lawyer"
+  function first(){
+    // console.log(age);  //TDZ for age variable
+    
+    // let x = 10
+    const age = 25
+    // let job = "Doctor"
+
+    function second(){
+
+      if(age >=25){
+        const hasLicense = true
+      }
+      let job = "Engineer"
+      console.log(`${name2} is ${age} years-old ${job}`);
+    }
+    second()
+  }
+  first()
+  </script>
+  
+</body>
+</html>

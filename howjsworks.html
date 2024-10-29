@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Click</button>
+  
+  <script>
+  // "use strict"  ---> To activate strict mood.
+
+  /* 
+  use strict - Released in ES5, It tells browers to change the way they excute JS. Helps to write better and more secure code.
+  
+  */
+
+    const btn = document.querySelector("button")
+
+    btn.addEventListener("click", ()=>{
+      console.log("Btn is clicked");
+    })
+
+
+    let x = 10
+    console.log(x);
+
+    function sum(a, a){
+      console.log(a + a);
+    }
+    sum(2, 5)
+
+    var NaN = 10
+    ///////////////////////////////////////
+    // JS Features
+    
+    /* 
+    1.) High Level - Every program that runs on your computer needs some hardware resources,such as memory and 
+                the CPU to do its work. low-level languages, such as C,where you have to manually manage these resources.
+                ou have high-level languages such as JavaScript and Python, where we do not have to manage resources at all 
+                because these languages have so-called abstractions that take all of that work away from us. the language 
+                easier to learn and to use, but the downside is that programs will never be as fast or as optimized as 
+                for example, C programs.
+
+
+    2.) Garbage collection -  One of the powerful tools that takes memory management away from developers is garbage-collection,
+                        which is basically an algorithm inside the JavaScript engine, which automatically removes old, unused 
+                        objects.from the computer memory in order not to clog it up with unnecessary stuff.which cleans  
+                        memory from time to time so that we don't have to do it manually in our code.
+
+    3.) Interpreted or JIT - JavaScript is an interpreted or just-in-time compiled language.the computer's  processor only understands 
+                          zeros and ones. which is also called machine code. this code eventually needs to be translated to machine 
+                          code. And that step can be either compiling or interpreting. this happens inside the JavaScript engine.
+
+    4.) Multiparadigm - A paradigm is an approach and an overall mindset of structuring our code, which will ultimately direct 
+                    the coding style and technique in a project that uses a certain paradigm.  three popular paradigms are procedural, 
+                    object-oriented, and functional programming.So procedural programming is what we've been doing so far,which is basically just organizing the code in a very linear way, and then with some functions in between. we can classify paradigms as imperative or as declarative, many languages are only procedural or only object-oriented or only functional,but JavaScript does all of it. So it's really flexible and versatile. And so we can do really whatever we want with it.
+
+    5.) Prototype-based OOP - Everything in JavaScript is an object, except for primitive values such as numbers, strings, etc. 
+                          But arrays are just object. Now,  we can create an array and then use the push method on it, for example? 
+                          Well, it's because of prototypal inheritance. Basically, we create arrays from an array blueprint, which is 
+                          like a template and this is called the prototype. This prototype contains all the array methods and the 
+                          arrays that we create in our code then inherit the methods from the blueprint so that we can use them on the arrays. 
+
+    6.) Dynamic - which means that variables can hold values of different types during runtime.
+
+    7.) single threaded and non-blocking - That means how the JavaScript engine handles multiple tasks happening at the same time.
+
+    8.) First class function - First-class functions, which simply means that functions are treated just as regular variables. 
+                           so, we can pass   functions into other functions and we can even return functions from functions. and this allows for functional-programming, which is one of the paradigms and actually not all languages have first-class functions..
+    
+    */
+
+    const str1 = new String("Javascript")
+    console.log(typeof str1);
+    
+
+    const str2 = "Javascript"
+    console.log(typeof str2);
+
+
+    const obj = {
+      a : 1,
+      b: 2
+    }
+
+    console.log(obj);
+
+    const y = 10
+
+    const sumHandler = function(){
+      console.log(1 + 2);
+    }
+    
+  </script>
+</body>
+</html>
