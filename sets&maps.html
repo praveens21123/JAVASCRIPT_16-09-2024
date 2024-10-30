@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    /* 
+    Sets - Set is a collection of elements which are unique (i.e No element can be repeated), Set values can have any datatype. 
+    */
+    const arr = ["India", "Italy", "USA", "UK", "Pakistan", "USA"]
+    console.log(Array.isArray(arr));
+    
+
+    const newSet = new Set(["India", "Italy", "USA", "UK", "Pakistan", "USA"])
+    console.log(newSet);
+
+    console.log(newSet.size);
+
+    console.log(newSet.has("SA"));
+
+    newSet.add(20)
+    newSet.add(true)
+    console.log(newSet);
+
+    newSet.delete("Pakistan")
+    console.log(newSet);
+
+    console.log(typeof newSet);
+
+    newSet.clear()
+    console.log(newSet);
+
+    const num = [1, 2, 3, 4, 5, 2, 4, 3] //[1, 2, 3, 4, 5,]
+
+    const uniqueNum = [...new Set(num)]
+    console.log(uniqueNum);
+    //////////////////////////////////////////////////////////////////////
+    //Maps - map is a collection of properties which each properties has key and value.Map keys can have any datatype.
+
+    const obj = {
+      name : "peter"
+    }
+
+    console.log(typeof Object.keys(obj)[0]);
+
+    const newMap = new Map()
+
+    newMap.set("name", "Peter")
+    newMap.set("id", 101)
+    newMap.set(true, "hasLicense")
+
+   console.log(newMap.get("name"));
+   
+    console.log(newMap.size);
+    
+    console.log(newMap);
+
+    newMap.delete("name")
+    console.log(newMap);
+
+    console.log(typeof newMap);
+    
+    newMap.clear()
+    console.log(newMap);
+  </script>
+</body>
+</html>

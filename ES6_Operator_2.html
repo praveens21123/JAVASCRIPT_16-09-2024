@@ -11,64 +11,105 @@
   <script>
 //////////////////////////////////////////////////////////
 // Short circutting
-console.log(`-------OR-------`);
+// console.log(`-------OR-------`);
 
-console.log(2 || "Peter");
+// console.log(2 || "Peter");
 
-console.log("" || "Peter");
+// console.log("" || "Peter");
 
-console.log(undefined || null);
+// console.log(undefined || null);
 
-console.log("" || undefined || null || "Hello" || 23 || null);
+// console.log("" || undefined || null || "Hello" || 23 || null);
 
-
-const car = {
-  brand: "BMW",
-  kms:0
-}
-
-// Simple if/else statement.
-if(car.kms){
-  console.log(`The car distance is ${car.kms} Kms`);
-} else {
-  car.kms = 10
-  console.log(`The car distance is ${car.kms} Kms`);
-}
-
-// const distance = car.kms ? car.kms : 10
-// const distance = car.kms || 10
-
-// console.log(distance);
-
-console.log(`-------AND-------`);
-
-console.log("Peter" && "");
-console.log(undefined && "Peter");
-console.log(22 && "Jessica" && "Hello" && 0 && null);
 
 // const car = {
-
+//   brand: "BMW",
 //   kms:0
 // }
 
-// if(car.brand){
-//   console.log(`The car brand is ${car.brand}`);
-// } 
+// // Simple if/else statement.
+// if(car.kms){
+//   console.log(`The car distance is ${car.kms} Kms`);
+// } else {
+//   car.kms = 10
+//   console.log(`The car distance is ${car.kms} Kms`);
+// }
 
-// car.brand && console.log(`The car brand is ${car.brand}`);
-///////////////////////////////////////////////////////////////////
-// Nullish Coalescing(??) 
-// Falsy values: null and undefined
+// // const distance = car.kms ? car.kms : 10
+// // const distance = car.kms || 10
 
-const car2 = {
-  brand: "BMW",
-  kms:0
+// // console.log(distance);
+
+// console.log(`-------AND-------`);
+
+// console.log("Peter" && "");
+// console.log(undefined && "Peter");
+// console.log(22 && "Jessica" && "Hello" && 0 && null);
+
+// // const car = {
+
+// //   kms:0
+// // }
+
+// // if(car.brand){
+// //   console.log(`The car brand is ${car.brand}`);
+// // } 
+
+// // car.brand && console.log(`The car brand is ${car.brand}`);
+// ///////////////////////////////////////////////////////////////////
+// // Nullish Coalescing(??) 
+// // Falsy values: null and undefined
+
+// const car2 = {
+//   brand: "BMW",
+//   kms:0
+// }
+// //Terinary Operator
+// // const distance = car2.kms ? car.kms : 10
+// //Nullish Coalescing
+// const distance = car2.kms ?? 10
+// console.log(distance);
+
+////////////////////////////////////////////////////////////
+// Optional chaining(?.)
+
+const hotel = {
+  name: "Starbucks",
+  openingHours: {
+    thu: {
+      open:10,
+      close:22
+    },
+    fri:{
+      open:11,
+      close:23
+    },
+    sat:{
+      open:0,
+      close:24
+    }
+  }
 }
-//Terinary Operator
-// const distance = car2.kms ? car.kms : 10
-//Nullish Coalescing
-const distance = car2.kms ?? 10
-console.log(distance);
+
+// console.log(hotel.openingHours.mon.open);
+
+// if(hotel.openingHours.mon){
+//   console.log(hotel.openingHours.mon.open);
+// }
+hotel.openingHours.mon && console.log(hotel.openingHours.mon.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+
+ for(let i = 0; i < days.length; i++){
+  const start = hotel.openingHours[days[i]]?.open 
+
+  if(hotel.openingHours[days[i]]){
+    console.log(`on ${days[i]}, we are open at ${start}`); 
+  } else {
+    console.log(`on ${days[i]}, we are closed`); 
+  }
+ }
+
 
   </script>
 </body>
