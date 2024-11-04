@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Short circutting</title>
 </head>
 <body>
   
@@ -20,7 +20,6 @@
 // console.log(undefined || null);
 
 // console.log("" || undefined || null || "Hello" || 23 || null);
-
 
 // const car = {
 //   brand: "BMW",
@@ -71,8 +70,8 @@
 // console.log(distance);
 
 ////////////////////////////////////////////////////////////
-// Optional chaining(?.)
-
+/* Optional chaining(?.) - The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error. 
+*/
 const hotel = {
   name: "Starbucks",
   openingHours: {

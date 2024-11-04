@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Functions</title>
+</head>
+<body>
+  <button>click me</button>
+
+  <script>
+
+    //First class function
+    const x = 10
+
+    const add = function(){
+      console.log(1 + 2);
+    }
+    const btn = document.querySelector("button")
+    btn.addEventListener("click", add)
+
+    /* 
+    Js has Fundamental properies are first class function, It helps write higher order function.
+
+    -> Js treats functions as simply values
+    -> Js Has first class citizen.
+    */
+
+    //Higher Order Function - A function which receives another function as an arguement (or) A function returns another function.
+
+    const counter = ( ) => {
+      let count = 0
+      return function(){
+        count++
+        console.log(count);
+      }
+    }
+    const countes = counter()
+    countes()
+    countes()
+    ////////////////////////////////////////////////////////////
+    // Callback Function - A function which passes arguement to the another function.
+
+    //Input: javascript is best  -> Output : JAVASCRIPT is best
+   
+    //Callback Function
+    function firstWordHandler(str2){
+      const [first, ...others] = str2.split(" ")
+      return [first.toUpperCase(), ...others].join(" ")
+    }
+
+    //Higher Order Function
+    function textTrans(str1, fn){
+      console.log(`Input : ${str1}`);
+      console.log(`Output : ${fn(str1)}`); 
+    }
+
+    textTrans("javascript is best", firstWordHandler)
+    /////////////////////////////////////////////////////////////////////
+    //IIFE - Immediatly Invoked Function Expression - It runs as soon as it is defined.
+
+    (function sum(a, b){
+      console.log(a + b);
+    })(2, 5)
+    /////////////////////////////////////////////////////////////////
+    //Function Currying - Transforms a function with multiple arguments into a nested series of functions, each taking a single argument.
+    
+    function area(l){
+      return function(b){
+        console.log(l * b);
+      }
+    }
+    area(5)(5)
+    // area(2, 2)
+
+
+  </script>
+</body>
+</html>
