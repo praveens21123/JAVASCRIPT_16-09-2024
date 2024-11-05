@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    ///////////////////////////////////////////////////////////////
+    // "use strict"
+
+    const apple = {
+      brand: "Apple",
+      model: "Iphone 16",
+      price: "80K",
+
+      // info: function(mon, year){
+      //   console.log(`${this.brand} ${this.model} was released on ${mon}, ${year}`);
+      // }
+      // info(mon, year){
+      //   console.log(`${this.brand} ${this.model} was released on ${mon}, ${year}`);
+      // }
+    }
+
+    // apple.info("Sep", 2024)
+
+    const printInfo = function(mon, year){
+        console.log(`${this.brand} ${this.model} was released on ${mon}, ${year}`);
+    }
+    // printInfo("sep", 2024)
+
+
+
+    const samsung = {
+      brand: "samsung",
+      model: "S24 Ultra",
+      price: "120K", 
+    }
+
+    //////////////////////////////////////////////////////
+    console.log(`-------CALL-------`);
+    
+    //1.) call - 
+    printInfo.call(apple, "sep", 2024)
+    printInfo.call(samsung, "Aug", 2024)
+
+    console.log(`-------Apply-------`);
+    //2.) Apply - 
+    const arr1 = ["may", 2024]
+
+    printInfo.apply(apple, ["may", 2024])
+    // printInfo.call(samsung, ...arr1)
+
+    console.log(`-------Bind-------`);
+    //3.) Bind - 
+    const bindToApple = printInfo.bind(apple)
+    bindToApple("sep", 2024)
+    const bindToSamsung = printInfo.bind(samsung)
+    bindToSamsung("June", 2024)
+    /////////////////////////////////////////////////////////
+    // Closures - 
+
+    function counter(){
+      let count = 0;
+
+      return function(){
+        count++
+        console.log(count);
+      }
+    }
+    const x = counter()
+    x()
+    x()
+
+  </script>
+</body>
+</html>
