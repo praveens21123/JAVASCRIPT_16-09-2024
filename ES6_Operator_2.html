@@ -6,7 +6,6 @@
   <title>Short circutting</title>
 </head>
 <body>
-  
 
   <script>
 //////////////////////////////////////////////////////////
@@ -70,7 +69,7 @@
 // console.log(distance);
 
 ////////////////////////////////////////////////////////////
-/* Optional chaining(?.) - The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error. 
+/* Optional chaining(?.) - The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
 */
 const hotel = {
   name: "Starbucks",
@@ -100,15 +99,14 @@ hotel.openingHours.mon && console.log(hotel.openingHours.mon.open);
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 
  for(let i = 0; i < days.length; i++){
-  const start = hotel.openingHours[days[i]]?.open 
+  const start = hotel.openingHours[days[i]]?.open
 
   if(hotel.openingHours[days[i]]){
-    console.log(`on ${days[i]}, we are open at ${start}`); 
+    console.log(`on ${days[i]}, we are open at ${start}`);
   } else {
-    console.log(`on ${days[i]}, we are closed`); 
+    console.log(`on ${days[i]}, we are closed`);
   }
  }
-
 
   </script>
 </body>
