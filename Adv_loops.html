@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    //for-of-loop - 
+
+    // const num = [1, 2, 10, 4, 5, 6]
+
+    // for(let ele of num){
+    //  console.log(ele);
+    // }
+
+    // // [i, ele] = [0, 1] 
+
+    // for(let [i, ele] of num.entries()){
+    //   // console.log(ele[0], ele[1]);
+    //   console.log(i, ele);
+    // }
+
+    //for-in-loop -
+
+    const obj = {
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4
+    }
+
+    // for(let key in obj){
+    //   // console.log(key); 
+    //   // console.log(obj[key]);
+    //   console.log( key ,":", obj[key]);
+    // }
+    /////////////////////////////////////////////////////////////
+    // Advance Array Methods
+      const num = [1, 2, 3, 4, 5, 6]
+
+    //1.) forEach() - 
+    //syntax
+    // array.forEach((currentEle, index, array)=>{})
+
+    // num.forEach((ele, i, array)=>{
+    //   console.log(ele, i, array);
+    // })
+
+    // const numbers = [1, 2, 3, 4, 5, 2, 5, 3] // [1, 2, 3, 4, 5]
+    const res = []
+    console.log(res);
+    // numbers.forEach((ele)=>{
+    //   if(!res.includes(ele)){
+    //     res.push(ele)
+    //   }
+    // })
+    // console.log(res);
+
+    // for(let i = 0; i < numbers.length; i++){
+    //   if(!res.includes(numbers[i])){
+    //     res.push(numbers[i])
+    //   }
+    // }
+    // console.log(res);
+    /////////////////////////////////////////////////////////////////
+    const numbers = [1, 2, 3, 4, 5, 2, 5, 3]
+
+    //2. map() -
+    //syntax: arr.map((currentEle, index, array)=>{})
+    // const mapRes = numbers.map((ele, i, array)=>{
+    //   return ele*2
+    // })
+    // const mapRes = numbers.map( ele => ele*2 )
+    // console.log(mapRes);
+
+    //3. Filter()
+    //syntax
+    //array.filter((currentEle, index, array)=>{})
+
+  const FilterRes = numbers.filter((ele)=>{
+   return ele >= 4
+  })
+  console.log(FilterRes);
+
+  const mobilePhones = [
+    {brand:"Samsung", model: "s24", price:"100K", ram:8},
+    {brand:"Apple", model: "iphone 16", price:"80K", ram:6},
+    {brand:"Vivo", model: "v40", price:"40K", ram:6},
+    {brand:"oppo", model: "f20", price:"15K", ram:4},
+    {brand:"lava", model: "Iris", price:"10K", ram:3},
+    {brand:"onePlus", model: "nord 2", price:"25K", ram:6},
+    {brand:"nokia", model: "sssd4", price:"10K", ram:2},
+    {brand:"Redmi", model: "note 13", price:"20K", ram:3}
+  ]
+
+  const filterPhn = mobilePhones.filter((ele)=>{
+    return ele.ram > 4
+  })
+  
+  
+
+    
+    
+    
+
+  </script>
+</body>
+</html>
