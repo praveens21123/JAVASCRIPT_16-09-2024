@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Advance Loops and Advance Array Methods</title>
 </head>
 <body>
-  
 
   <script>
-    //for-of-loop - 
+    //1.) for-of-loop - A for-of-loop operates on the values sourced from an iterable one by one in sequential order.
 
     const num = [1, 2, 10, 4, 5, 6]
 
@@ -24,7 +23,7 @@
       console.log(i, ele);
     }
 
-    //for-in-loop -
+    //2.) for-in-loop - The for-in-loop statement iterates over all enumerable string properties of an object
 
     const obj = {
       a: 1,
@@ -44,7 +43,7 @@
       const _num = [1, 2, 3, 4, 5, 6]
 
     /*
-     1.) forEach() - 
+     1.) forEach() - The "forEach" method of Array instances executes a provided function once for each array element.
      syntax
      array.forEach((currentEle, index, array)=>{}) 
     */
@@ -73,7 +72,8 @@
     const numbers = [1, 2, 3, 4, 5, 2, 5, 3]
 
     /* 
-    2. map() -
+    2. map() - The "map" method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
+
     syntax: arr.map((currentEle, index, array)=>{}) 
     */
 
@@ -84,7 +84,8 @@
     console.log(mapRes);
 
    /*  
-    3. Filter()
+    3. Filter() - The "filter" method is an iterative method. It calls a provided callbackFn function once for each element in an array, and constructs a new array of all the values for which callbackFn returns a truthy value. Array elements which do not pass the callbackFn test are not included in the new array.
+
       syntax
       array.filter((currentEle, index, array)=>{}) 
   */
@@ -108,13 +109,6 @@
   const filterPhn = mobilePhones.filter((ele)=>{
     return ele.ram > 4
   })
-  
-  
-
-    
-    
-    
-
   </script>
 </body>
 </html>
