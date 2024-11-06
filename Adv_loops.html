@@ -11,18 +11,18 @@
   <script>
     //for-of-loop - 
 
-    // const num = [1, 2, 10, 4, 5, 6]
+    const num = [1, 2, 10, 4, 5, 6]
 
-    // for(let ele of num){
-    //  console.log(ele);
-    // }
+    for(let ele of num){
+     console.log(ele);
+    }
 
-    // // [i, ele] = [0, 1] 
+    // [i, ele] = [0, 1] 
 
-    // for(let [i, ele] of num.entries()){
-    //   // console.log(ele[0], ele[1]);
-    //   console.log(i, ele);
-    // }
+    for(let [i, ele] of num.entries()){
+      // console.log(ele[0], ele[1]);
+      console.log(i, ele);
+    }
 
     //for-in-loop -
 
@@ -33,32 +33,35 @@
       d: 4
     }
 
-    // for(let key in obj){
-    //   // console.log(key); 
-    //   // console.log(obj[key]);
-    //   console.log( key ,":", obj[key]);
-    // }
+    for(let key in obj){
+      // console.log(key); 
+      // console.log(obj[key]);
+      console.log( key ,":", obj[key]);
+    }
     /////////////////////////////////////////////////////////////
-    // Advance Array Methods
-      const num = [1, 2, 3, 4, 5, 6]
+    //------>>> Advance Array Methods <<<------------//
 
-    //1.) forEach() - 
-    //syntax
-    // array.forEach((currentEle, index, array)=>{})
+      const _num = [1, 2, 3, 4, 5, 6]
 
-    // num.forEach((ele, i, array)=>{
-    //   console.log(ele, i, array);
-    // })
+    /*
+     1.) forEach() - 
+     syntax
+     array.forEach((currentEle, index, array)=>{}) 
+    */
 
-    // const numbers = [1, 2, 3, 4, 5, 2, 5, 3] // [1, 2, 3, 4, 5]
+    _num.forEach((ele, i, array)=>{
+      console.log(ele, i, array);
+    })
+
+    const _numbers = [1, 2, 3, 4, 5, 2, 5, 3] // [1, 2, 3, 4, 5]
     const res = []
     console.log(res);
-    // numbers.forEach((ele)=>{
-    //   if(!res.includes(ele)){
-    //     res.push(ele)
-    //   }
-    // })
-    // console.log(res);
+    _numbers.forEach((ele)=>{
+      if(!res.includes(ele)){
+        res.push(ele)
+      }
+    })
+    console.log(res);
 
     // for(let i = 0; i < numbers.length; i++){
     //   if(!res.includes(numbers[i])){
@@ -69,17 +72,22 @@
     /////////////////////////////////////////////////////////////////
     const numbers = [1, 2, 3, 4, 5, 2, 5, 3]
 
-    //2. map() -
-    //syntax: arr.map((currentEle, index, array)=>{})
-    // const mapRes = numbers.map((ele, i, array)=>{
-    //   return ele*2
-    // })
-    // const mapRes = numbers.map( ele => ele*2 )
-    // console.log(mapRes);
+    /* 
+    2. map() -
+    syntax: arr.map((currentEle, index, array)=>{}) 
+    */
 
-    //3. Filter()
-    //syntax
-    //array.filter((currentEle, index, array)=>{})
+    const mapRes = numbers.map((ele, i, array)=>{
+      return ele*2
+    })
+    // const mapRes = numbers.map( ele => ele*2 )
+    console.log(mapRes);
+
+   /*  
+    3. Filter()
+      syntax
+      array.filter((currentEle, index, array)=>{}) 
+  */
 
   const FilterRes = numbers.filter((ele)=>{
    return ele >= 4
