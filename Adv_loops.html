@@ -10,33 +10,33 @@
   <script>
   //   //1.) for-of-loop - A for-of-loop operates on the values sourced from an iterable one by one in sequential order.
 
-  //   const num = [1, 2, 10, 4, 5, 6]
+    const num = [1, 2, 10, 4, 5, 6]
 
-  //   // for(let ele of num){
-  //   //  console.log(ele);
-  //   // }
+    for(let ele of num){
+     console.log(ele);
+    }
 
-  //   // [i, ele] = [0, 1] 
+    // [i, ele] = [0, 1] 
 
-  //   for(let [i, ele] of num.entries()){
-  //     // console.log(ele[0], ele[1]);
-  //     console.log(i, ele);
-  //   }
+    for(let [i, ele] of num.entries()){
+      // console.log(ele[0], ele[1]);
+      console.log(i, ele);
+    }
 
   //   //2.) for-in-loop - The for-in-loop statement iterates over all enumerable string properties of an object
 
-  //   const obj = {
-  //     a: 1,
-  //     b: 2,
-  //     c: 3,
-  //     d: 4
-  //   }
+    const obj = {
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4
+    }
 
-  //   for(let key in obj){
-  //     // console.log(key); 
-  //     // console.log(obj[key]);
-  //     console.log( key ,":", obj[key]);
-  //   }
+    for(let key in obj){
+      // console.log(key); 
+      // console.log(obj[key]);
+      console.log( key ,":", obj[key]);
+    }
   //   /////////////////////////////////////////////////////////////
   //   //------>>> Advance Array Methods <<<------------//
 
@@ -48,26 +48,26 @@
   //    array.forEach((currentEle, index, array)=>{}) 
   //   */
 
-  //   _num.forEach((ele, i, array)=>{
-  //     console.log(ele, i, array);
-  //   })
+      _num.forEach((ele, i, array)=>{
+        console.log(ele, i, array);
+      })
 
-  //   const _numbers = [1, 2, 3, 4, 5, 2, 5, 3] // [1, 2, 3, 4, 5]
-  //   const res = []
-  //   console.log(res);
-  //   _numbers.forEach((ele)=>{
-  //     if(!res.includes(ele)){
-  //       res.push(ele)
-  //     }
-  //   })
-  //   console.log(res);
+    const _numbers = [1, 2, 3, 4, 5, 2, 5, 3] // [1, 2, 3, 4, 5]
+    const res = []
+    console.log(res);
+    _numbers.forEach((ele)=>{
+      if(!res.includes(ele)){
+        res.push(ele)
+      }
+    })
+    console.log(res);
 
-  //   // for(let i = 0; i < numbers.length; i++){
-  //   //   if(!res.includes(numbers[i])){
-  //   //     res.push(numbers[i])
-  //   //   }
-  //   // }
-  //   // console.log(res);
+    // for(let i = 0; i < numbers.length; i++){
+    //   if(!res.includes(numbers[i])){
+    //     res.push(numbers[i])
+    //   }
+    // }
+    // console.log(res);
   //   /////////////////////////////////////////////////////////////////
   //   const numbers = [1, 2, 3, 4, 5, 2, 5, 3]
 
@@ -77,11 +77,11 @@
   //   syntax: arr.map((currentEle, index, array)=>{}) 
   //   */
 
-  //   const mapRes = numbers.map((ele, i, array)=>{
-  //     return ele*2
-  //   })
-  //   // const mapRes = numbers.map( ele => ele*2 )
-  //   // console.log(mapRes);
+    const mapRes = numbers.map((ele, i, array)=>{
+      return ele*2
+    })
+    // const mapRes = numbers.map( ele => ele*2 )
+    // console.log(mapRes);
 
   //  /*  
   //   3. Filter() - The "filter" method is an iterative method. It calls a provided callbackFn function once for each element in an array, and constructs a new array of all the values for which callbackFn returns a truthy value. Array elements which do not pass the callbackFn test are not included in the new array.
@@ -90,56 +90,56 @@
   //     array.filter((currentEle, index, array)=>{}) 
   // */
 
-  // // const FilterRes = numbers.filter((ele)=>{
-  // //  return ele >= 4
-  // // })
-  // // console.log(FilterRes);
+      const FilterRes = numbers.filter((ele)=>{
+      return ele >= 4
+      })
+      console.log(FilterRes);
 
-  // const mobilePhones = [
-  //   {brand:"Samsung", model: "s24", price:"100K", ram:8},
-  //   {brand:"Apple", model: "iphone 16", price:"80K", ram:6},
-  //   {brand:"Vivo", model: "v40", price:"40K", ram:6},
-  //   {brand:"oppo", model: "f20", price:"15K", ram:4},
-  //   {brand:"lava", model: "Iris", price:"10K", ram:3},
-  //   {brand:"onePlus", model: "nord 2", price:"25K", ram:6},
-  //   {brand:"nokia", model: "sssd4", price:"10K", ram:2},
-  //   {brand:"Redmi", model: "note 13", price:"20K", ram:3}
-  // ]
+  const mobilePhones = [
+    {brand:"Samsung", model: "s24", price:"100K", ram:8},
+    {brand:"Apple", model: "iphone 16", price:"80K", ram:6},
+    {brand:"Vivo", model: "v40", price:"40K", ram:6},
+    {brand:"oppo", model: "f20", price:"15K", ram:4},
+    {brand:"lava", model: "Iris", price:"10K", ram:3},
+    {brand:"onePlus", model: "nord 2", price:"25K", ram:6},
+    {brand:"nokia", model: "sssd4", price:"10K", ram:2},
+    {brand:"Redmi", model: "note 13", price:"20K", ram:3}
+  ]
 
-  // const filterPhn = mobilePhones.filter((ele)=>{
-  //   return ele.ram > 4
-  // })
+  const filterPhn = mobilePhones.filter((ele)=>{
+    return ele.ram > 4
+  })
 
   //3. Reduce() - 
    /* 
    syntax: array.reduce((acc, ele, i, array)=>{}, init_acc_value)
    */
-  // const num1 = [1, 2, 3, 4, 5]
+  const num2 = [1, 2, 3, 4, 5]
 
-  // const reduceRes = num1.reduce((acc, ele)=>{
-  //  return acc + ele
-  // },0)
+  const reduceRes = num2.reduce((acc, ele)=>{
+   return acc + ele
+  },0)
 
   // const reduceRes = num1.reduce((acc, ele)=>{
   //     acc.push(ele * 2)
   //     return acc
   // },[])
 
-  // console.log(reduceRes);
+  console.log(reduceRes);
   ///////////////////////////////////////////////////
   //5.) find
-  // const num1 = [1, 2, 8, 4, 5, 9]
+  const _num = [1, 2, 8, 4, 5, 9]
 
-  // const findRes = num1.find((ele)=>{
-  //    return ele > 5
-  // })
-  // console.log(findRes);
+  const findRes = _num.find((ele)=>{
+     return ele > 5
+  })
+  console.log(findRes);
 
   // 6.)findIndex
-  // const findIndexRes = num1.findIndex((ele)=>{
-  //    return ele > 5
-  // })
-  // console.log(findIndexRes);
+  const findIndexRes = _num.findIndex((ele)=>{
+     return ele > 5
+  })
+  console.log(findIndexRes);
 
   //7.some
   const num1 = [1, 2, 8, 4, 5, 9]
@@ -150,20 +150,18 @@
   console.log(someRes);
 
   //8. every
-
   const everyRes = num1.every((ele)=>{
      return ele < 10 
   })
   console.log(everyRes);
 
-
   //9.flat
   const nestedArr = [[1, 2, 3], [4, 5, 6, 7], 8, 9] // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  // const flatRes = numbers.flat()
-  // console.log(flatRes);
+  const flatRes = numbers.flat()
+  console.log(flatRes);
 
-  const res = []
+  const res1 = []
 
   function recur(arr){
     arr.forEach((ele)=>{
@@ -175,9 +173,9 @@
     })
   }
   recur(nestedArr)
-  console.log(res);
+  console.log(res1);
 
-  //flatMap
+  //10.) flatMap
     const students = [
       {name:"Peter", num:[1, 2, 3]},
       {name:"A", num:[4, 5, 6]},
@@ -190,28 +188,13 @@
     const y = students.flatMap(ele => ele.num)
     console.log(y);
 
-    //sort()
+    //11.) sort()
 
     const countries =["India", "italy", "Pakistan", "USA"]
     const numbers = [43, 54, 332, -454, 7, -52]
     console.log(numbers.sort((a, b)=> b - a));
     
     console.log(countries.sort());
-    
-
-
-    
-    
-
-  
-  
-
-  
-
-
-
-
-
 
   </script>
 </body>

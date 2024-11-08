@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP</title>
+</head>
+<body>
+  
+  <script>
+
+    //OOPS - Object Oriented Programming system
+
+    // const person = {
+    //   name: "Peter",
+    //   email: "XYZ@gmail.com",
+    //   password: "qwertyu",
+    //   login(){
+    //     //Code to execute
+    //   },
+    //   sendMsg(){
+    //     //Code to Execute
+    //   }
+    // }
+
+    // // parent class
+    // User{
+    //   name
+    //   private password
+    //   private email
+
+    //   login(){
+
+    //   }, 
+    //   sendMsg(){
+
+    //   }
+    //   private checkSpam(){
+
+    //   }
+    // }
+
+    // // child class
+
+    // student{
+    //   name,
+    //   password,
+    //   email,
+    //   course
+
+    // }
+
+    // // new User()  // Instantiation
+
+
+    // // Intance
+    // {
+    //   name: "Peter"
+    //   password:"werty"
+    //   email:"XYZ@gmail.com"
+    //   login(){
+
+    //   }, 
+    //   sendMsg(){
+
+    //   }
+    // }
+
+
+    /* 
+    Basic principles in OOP
+
+    1.) Abstraction - Hiding or Igoning the data, It doesn't matters
+    2.) Encupsulation - Keeping properies and methods private inside the class
+    3.) Inheritance - Making all properies and methods of certain class to the child class
+    4.) Polymorphism - Child class can overwrite a method, which is inherited from parent class
+
+    */
+
+    /* 
+    1.) Constructor function
+    2.) ES6 classes
+    3.) Object.create()
+    */
+
+    // const arr = [1, 2]
+    // console.log(arr);
+
+    //constructor Function
+    const Person = function(name, year){
+      this.firstName = name
+      this.birthYear = year
+    }
+
+    Person.prototype.calAge = function(){
+      console.log(2024 - this.birthYear);
+    }
+    Person.prototype.course = "React/Angular"
+    
+    const peter = new Person("Peter", 1999) //Instantiation
+    const jessica = new Person("Jessica", 2000)
+
+    console.log(peter.hasOwnProperty("course"));
+
+    console.log(Person.__Prototype === peter.__Prototype);
+    
+    
+
+    peter.calAge()
+    jessica.calAge()
+    
+    console.log(peter);
+    console.log(jessica);
+    
+    
+    
+  </script>
+</body>
+</html>
