@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    /* 
+    1.) Constructor function
+    2.) ES6 classes
+    3.) Object.create()
+    */
+
+    //Class Expression 
+    //Syntax: 
+    // const PersonClExp = class {} 
+
+    //Class Declaration
+    //Syntax:
+    // class PersonCl{
+        // constructor(){}
+    //}
+
+    /* 
+    1.) Classes are not hoisted
+    2.) Classes are first class citizen.
+    3.) Classes are executed in strict mode.
+    */
+    class PersonCl {
+       constructor(name, year){
+         this.firstName = name
+         this.birthYear = year
+       }
+       calAge(){
+        console.log(2024 - this.birthYear);
+       }
+      static greet(){
+        console.log("Hi There!");
+       }
+    }
+    const peter = new PersonCl("Peter", 1999) 
+    const jessica = new PersonCl("Jessica", 2000)
+    
+    PersonCl.greet()
+
+    // peter.calAge()
+    // jessica.calAge()
+
+    // console.log(peter.__prototype == PersonCl.__prototype);
+    
+    console.log(peter);
+    console.log(jessica);
+
+
+    // const arr = [1, 2]
+    // console.log(Array.isArray(arr));
+
+    ///////////////////////////////////////////////////////
+
+
+    // const apple = {
+    //   brand: "apple",
+    //   model: "Iphone 16",
+    //   features: ["AI Camera", "x", "y"],
+
+    //   get printFeatureOne(){
+    //     console.log( this.features[0])
+    //   },
+    //   set changeModel(newModel){
+    //     this.model = newModel
+    //   }
+    // }
+
+    // apple.printFeatureOne
+
+    // // apple.changeModel = "Iphone 16 pro max"
+
+    // console.log(apple);
+
+    class Square{
+      constructor(_width){
+       this.width = _width
+       this.height = _width
+      }
+      get printHeigth(){
+        console.log(this.height);
+      }
+      set area(_newWidth){
+        this.width = _newWidth
+        this.height = this.width
+      }
+    }
+    const res = new Square(4)
+    res.printHeigth
+    res.area = 6
+    console.log(res);
+    ////////////////////////////////////////////////////////////
+
+    
+    
+    
+    
+    
+    
+
+
+  </script>
+</body>
+</html>

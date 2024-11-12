@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    //Object.create() -
+    const person = {
+      prop(name, year){
+      this.firstName = name
+      this.birthYear = year
+      },
+      calAge(){
+        console.log("Age");
+      }
+    }
+
+    const tony = Object.create(person) 
+
+    tony.prop("Tony", 1998)
+
+    // tony.firstName = "Tony"
+    // tony.birthYear = 1998
+
+    console.log(tony);
+    //////////////////////////////////////////////
+    // Inheritance 
+
+   //parent
+    class TeacherCl{
+       constructor(name, year){
+        this.firstName = name
+        this.birthYear = year
+       }
+       calAge(){
+        console.log(2024 - this.birthYear);
+       }
+       greet(){
+        console.log("Hello world");
+       }
+
+    }
+
+    //Child
+    class StudentCl extends TeacherCl{
+       constructor(name, year, course){
+        // TeacherCl.call(this, name, year)
+        
+        // this.firstName = name
+        // this.birthYear = year
+        super(name, year)
+        this.course = course
+       }
+        greet(){
+        console.log(`${this.firstName} is studying ${this.course} course`);
+       }
+    }
+
+    const peter = new StudentCl("Peter", 1999, "ReactJS")
+    const jessica = new StudentCl("Jessica", 2000, "Angular")
+
+    peter.greet()
+    jessica.greet()
+
+    console.log(peter);
+    console.log(jessica);
+
+    // Encupsulation 
+
+    /* 
+    Public field - YES 
+    Public Method - YES 
+    Private Field - YES
+    Private Method - YES
+    */
+
+    class StudentCls{
+      fullName; //Public
+      ID;  //Public
+      #mark; //Private
+      constructor(name, id, marks){
+        this.fullName = name
+        this.ID = id
+        this.#mark = marks
+      }
+      get getMarks(){
+        return this.#mark
+      }
+      set changeName(newName){
+        this.fullName = newName
+      }
+      greet(){
+        console.log("Hello world");
+       }
+    }
+
+    const ganesh = new StudentCls("Ganesh", 101, 85)
+    ganesh.changeName = "Uday"
+    console.log(ganesh.getMarks);
+    
+    // ganesh.#mark = 100
+    console.log(ganesh);
+    
+    
+    
+  </script>
+</body>
+</html>
