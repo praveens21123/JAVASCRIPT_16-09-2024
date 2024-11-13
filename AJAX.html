@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX</title>
+</head>
+<body>
+
+  <button>Track Me</button>
+  
+
+  <script>
+
+
+
+    // AJAX - Asynchoronous Javascript and XML
+
+    const btn = document.querySelector("button")
+    // let count = 0
+
+    // console.log("A");
+    
+    // setTimeout(()=>{
+    //   console.log("B");
+    // }, 2000)
+
+    // for(let i = 0; i < 100000000; i++){
+    //   count+=i
+    // }
+    // console.log(count);
+    
+    // // btn.addEventListener("click", ()=>{
+    // //   console.log("Btn is clicked");
+    // // })
+
+    // console.log("C");
+
+    //////////////////////////////////////////////////////////////////////
+    //GeoLocation
+
+    function geolocationHandler(){
+      navigator.geolocation.getCurrentPosition((posData)=>{
+        setTimeout(()=>{
+          console.log(posData);
+        }, 2000)
+      }, (reject)=>{
+        console.log(reject); 
+      })
+    }
+    btn.addEventListener("click", geolocationHandler)
+    //////////////////////////////////////////////////////////////////////////////
+    // Promises - 
+
+    // const promise = new Promise((resolve, reject)=>{
+    //   const randomNum = Math.random()
+    //   console.log(randomNum);
+    //   if(randomNum >= 0.5){
+    //     resolve("You Won!")
+    //   } else{
+    //     reject("You Lost!")
+    //   }
+    // })
+    // // console.log(promise);
+
+    // promise.then((data)=>{
+    //   console.log(data);
+    // }).catch((rej)=>{
+    //  console.log(rej);
+    // })
+    
+
+
+
+    
+  </script>
+</body>
+</html>
