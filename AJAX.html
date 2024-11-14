@@ -50,24 +50,24 @@
     }
     btn.addEventListener("click", geolocationHandler)
     //////////////////////////////////////////////////////////////////////////////
-    // Promises - 
+    // Promises - An object for the future asynchorous tasks.
 
-    // const promise = new Promise((resolve, reject)=>{
-    //   const randomNum = Math.random()
-    //   console.log(randomNum);
-    //   if(randomNum >= 0.5){
-    //     resolve("You Won!")
-    //   } else{
-    //     reject("You Lost!")
-    //   }
-    // })
-    // // console.log(promise);
+    const promise = new Promise((resolve, reject)=>{
+      const randomNum = Math.random()
+      console.log(randomNum);
+      if(randomNum >= 0.5){
+        resolve("You Won!")
+      } else{
+        reject("You Lost!")
+      }
+    })
+    // console.log(promise);
 
-    // promise.then((data)=>{
-    //   console.log(data);
-    // }).catch((rej)=>{
-    //  console.log(rej);
-    // })
+    promise.then((data)=>{
+      console.log(data);
+    }).catch((rej)=>{
+     console.log(rej);
+    })
     
 
 

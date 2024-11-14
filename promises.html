@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Track me</button>
+
+  <script>
+
+    function timer(duration){
+      const promise = new Promise((resolve, reject)=>{
+         setTimeout(()=>{
+           resolve("Timer done!")
+         }, duration)
+      })
+      return promise
+    }
+
+    const geolocation = () => {
+      const promise = new Promise((success, denied)=>{
+         navigator.geolocation.getCurrentPosition((posData)=>{
+             success(posData)
+         }, (err)=>{
+             denied(err)
+         })
+      })
+      return promise
+    }
+    const btn = document.querySelector("button")
+
+    // function geolocationHandler(){
+    //   let positionData;
+    //  geolocation().then((posData)=>{
+    //   positionData = posData
+    //   return timer(2000)
+    //  }).then((data)=>{
+    //   console.log(data, positionData);
+    //  }).catch((err)=>{
+    //  console.log(err);
+    //  })
+
+    //   timer(0).then((data)=>{
+    //   console.log(data);
+    //   })
+
+    //   console.log("Hello World!");
+    // }
+    btn.addEventListener("click", geolocationHandler)
+
+    // async and await
+
+    async function geolocationHandler(){
+      let location;
+      let time;
+      try{
+        location = await geolocation()
+        time = await timer(2000)
+      }catch(err){
+        console.log(err);
+      }
+       console.log(location, time);
+
+       console.log("Getting posData");
+    }
+
+    geolocationHandler()
+  </script>
+</body>
+</html>
